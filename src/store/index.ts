@@ -4,14 +4,32 @@ declare global {
   }
 }
 
-import { compose, createStore, applyMiddleware, Middleware } from "redux";
+import {
+  compose,
+  createStore,
+  combineReducers,
+  applyMiddleware,
+  Middleware
+} from "redux";
 import thunk from "redux-thunk";
-import { rootReducer } from "./";
+import { ILaunchesState, reducer as LauncherReducer } from "./launches_store";
 
-export let store: any;
+export type AppThunkAction<TAction> = (
+  dispatch: (action: TAction) => void
+) => any;
+
+export interface IApplicationState {
+  launches: ILaunchesState;
+}
+
+const rootReducer = combineReducers({
+  launches: LauncherReducer
+});
+
 const middlewares: Middleware[] = [];
 middlewares.push(thunk);
 
+export let store: any;
 if (process.env.NODE_ENV === `development`) {
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
