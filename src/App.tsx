@@ -1,21 +1,22 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { Provider } from "react-redux";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "./App.css";
+import { Layout } from "./components/layout";
+import { Home, Launches, Pads, Rockets } from "./components/views";
 
-import { Home } from "./components/home";
-
-class App extends React.Component {
+export class App extends React.Component {
   public render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/" component={Home} />
-        </Switch>
-      </Router>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route path="/rockets" component={Rockets} />
+            <Route path="/launches" component={Launches} />
+            <Route path="/pads" component={Pads} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
     );
   }
 }
-
-export default App;
