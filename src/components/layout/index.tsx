@@ -3,11 +3,18 @@ import { Navbar } from "./navbar";
 import styled from "styled-components";
 import { RouteComponentProps, withRouter } from "react-router";
 
-interface ILayoutProps extends RouteComponentProps<{}> {
-  children?: React.ReactNode;
-}
+interface ILayoutProps {}
+type LayoutProps = ILayoutProps & RouteComponentProps<{}>;
 
-class _Layout extends React.Component<ILayoutProps, {}> {
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+`;
+
+class _Layout extends React.Component<LayoutProps, {}> {
   public render() {
     return (
       <StyledDiv>
@@ -17,13 +24,5 @@ class _Layout extends React.Component<ILayoutProps, {}> {
     );
   }
 }
-
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-`;
 
 export const Layout = withRouter(_Layout);
