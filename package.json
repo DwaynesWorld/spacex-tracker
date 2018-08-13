@@ -6,7 +6,10 @@
     "@types/react-redux": "^6.0.3",
     "@types/react-router": "^4.0.29",
     "@types/react-router-dom": "^4.3.0",
+<<<<<<< HEAD
     "@types/redux-logger": "^3.0.6",
+=======
+>>>>>>> d022240152dc9c3dbcc7c94ba31a27d8b111f6d9
     "@types/redux-thunk": "^2.1.0",
     "axios": "^0.18.0",
     "moment": "^2.22.2",
@@ -17,11 +20,15 @@
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.17.0",
     "redux": "^4.0.0",
+<<<<<<< HEAD
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-react": "^0.82.2",
     "styled-components": "^3.4.2"
+=======
+    "redux-thunk": "^2.3.0"
+>>>>>>> d022240152dc9c3dbcc7c94ba31a27d8b111f6d9
   },
   "scripts": {
     "start": "react-scripts-ts start",
